@@ -21,4 +21,4 @@ jobs:
         with:
           http_url: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/replicafilescache/TribalLeadership_Directory_-8807089639668789909.csv
           downloaded_filename: tribal-leaders.csv
-          postprocess: postprocess.py
+          postprocess: postprocess.ts
