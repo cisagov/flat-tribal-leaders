@@ -12,4 +12,4 @@ if __name__ == "__main__":
     df = df.sort_values('Tribe Full Name')
 
     # write edited file to repo. Pandas will overwrite by default.
-    df.to_csv("tribal-leaders-editted.csv",index=False)
+    df.to_csv("tribal-leaders.csv",index=False)
