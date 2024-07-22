@@ -10,10 +10,15 @@ jobs:
   scheduled:
     runs-on: ubuntu-latest
     steps:
+      - name: setup deno
+        uses: denoland/setup-deno@main
+        with:
+          deno-version: v1.x
       - name: Check out repo
         uses: actions/checkout@v2
       - name: Fetch data
         uses: githubocto/flat@v3
         with:
-          http_url: https://www.bia.gov/tribal-leaders-csv
+          http_url: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/replicafilescache/TribalLeadership_Directory_-8807089639668789909.csv
           downloaded_filename: tribal-leaders.csv
+          postprocess: postprocess.ts
