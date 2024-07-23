@@ -1,17 +1,26 @@
-// Is this the cause of the failures ?
-// import 'https://deno.land/x/flat@0.0.10/mod.ts'
+import { readCSV, writeCSV } from 'https://deno.land/x/flat@0.0.15/mod.ts' // replace with latest library https://deno.land/x/flat@0.0.x/mod.ts
 
+// flat runs on Deno, a Node competitor. Flat will pass in the downloaded filename as arg 0.
+// Deno.args[0]
+const tribalLeaders: Record<string, any> = await readCSV('./test.csv') 
 
-// install requirements with pip
-const pip_install = Deno.run({
-    cmd: ['python', '-m', 'pip', 'install', '-r', 'requirements.txt'],
-});
+// custom compare function
+function compare( a, b ) {
+    if ( a["Tribe Full Name"] < b["Tribe Full Name"] ){
+      return -1;
+    }
+    if ( a['Tribe Full Name'] > b['Tribe Last Name'] ){
+      return 1;
+    }
+    return 0;
+  }
 
-await pip_install.status();
+// remove OBJECTID
+tribalLeaders.forEach(object => {
+    delete object['OBJECTID'];
+ })
 
-// Forwards the execution to the python script
-const py_run = Deno.run({
-    cmd: ['python', './postprocessing.py'].concat(Deno.args),
-});
+tribalLeaders.sort(compare)
 
-await py_run.status();
+writeCSV(tribalLeaders, './test.csv')
+
