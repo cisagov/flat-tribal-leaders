@@ -1,8 +1,7 @@
 import { readCSV, writeCSV } from 'https://deno.land/x/flat@0.0.15/mod.ts' // replace with latest library https://deno.land/x/flat@0.0.x/mod.ts
 
 // flat runs on Deno, a Node competitor. Flat will pass in the downloaded filename as arg 0.
-// Deno.args[0]
-const tribalLeaders: Record<string, any> = await readCSV('./test.csv') 
+const tribalLeaders: Record<string, any> = await readCSV(Deno.args[0]) 
 
 // custom compare function
 function compare( a, b ) {
@@ -22,5 +21,5 @@ tribalLeaders.forEach(object => {
 
 tribalLeaders.sort(compare)
 
-writeCSV(tribalLeaders, './test.csv')
+writeCSV(tribalLeaders, './tribal-leaders.csv')
 
