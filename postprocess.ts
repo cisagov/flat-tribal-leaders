@@ -23,7 +23,5 @@ tribalLeaders.forEach(object => {
 
 tribalLeaders.sort(compare)
 
-await removeFile(filePath)
-
 await writeCSV('./tribal-leaders.csv', tribalLeaders)
 
