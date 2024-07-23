@@ -25,5 +25,5 @@ tribalLeaders.sort(compare)
 
 await removeFile(filePath)
 
-await writeCSV(tribalLeaders, './tribal-leaders.csv')
+await writeCSV('./tribal-leaders.csv', tribalLeaders)
 
