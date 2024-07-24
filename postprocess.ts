@@ -34,5 +34,5 @@ tribalLeaders.forEach(object => {
  // sort using custom compare function
 tribalLeaders.sort(compare)
 
-await writeCSV('./tribal-leaders-test.csv', tribalLeaders)
+await writeCSV('./tribal-leaders.csv', tribalLeaders)
 
