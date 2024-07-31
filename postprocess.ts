@@ -22,6 +22,7 @@ function compare( a, b ) {
 tribalLeaders.forEach(object => {
     // remove OBJECTID
     delete object['OBJECTID'];
+    delete object['GlobalID'];
 
     //strip newlines from all but the last element
     for(const property in object) {
