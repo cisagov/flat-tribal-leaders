@@ -15,7 +15,7 @@ jobs:
       - name: setup deno
         uses: denoland/setup-deno@main
         with:
-          deno-version: v2.x
+          deno-version: v1.x
       - name: Check out repo
         uses: actions/checkout@v4.1.7
       - name: Fetch data
@@ -24,4 +24,3 @@ jobs:
           http_url: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/replicafilescache/TribalLeadership_Directory_-8807089639668789909.csv
           downloaded_filename: tribal-leaders.csv
           postprocess: postprocess.ts
-          postprocess_args: --allow-import
