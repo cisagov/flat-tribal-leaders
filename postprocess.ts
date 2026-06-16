@@ -1,5 +1,5 @@
-import { readCSV, writeCSV, removeFile } from 'https://deno.land/x/flat@0.0.15/mod.ts' 
-// replace with latest library as needed: https://deno.land/x/flat@0.0.x/mod.ts
+// Vendored locally via deno.json + vendor/ (re-pin/re-vendor with ./vendor-flat.sh).
+import { readCSV, writeCSV } from 'https://deno.land/x/flat@0.0.15/src/csv.ts'
 
 // flat action runs on Deno, a Node competitor. Flat will pass in the downloaded filename as arg 0.
 const filePath: string = Deno.args[0]

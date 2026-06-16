@@ -13,14 +13,23 @@ jobs:
       contents: write
     steps:
       - name: setup deno
-        uses: denoland/setup-deno@main
+        uses: denoland/setup-deno@v2
         with:
-          deno-version: v1.x
+          deno-version: v2.x
       - name: Check out repo
-        uses: actions/checkout@v4.1.7
-      - name: Fetch data
-        uses: githubocto/flat@v3.4.0
-        with:
-          http_url: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/replicafilescache/TribalLeadership_Directory_-8807089639668789909.csv
-          downloaded_filename: tribal-leaders.csv
-          postprocess: postprocess.ts
+        uses: actions/checkout@v6
+      - name: Download data
+        run: |
+          curl -fsSL -o tribal-leaders.csv \
+            "https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/replicafilescache/TribalLeadership_Directory_-8807089639668789909.csv"
+      - name: Run postprocess.ts (clean + sort)
+        run: |
+          deno run --allow-read --allow-write --cached-only \
+            postprocess.ts tribal-leaders.csv
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tribal-leaders.csv
+          git commit -m "Flat: latest data ($(date -u +%FT%TZ))" || exit 0
+          git push

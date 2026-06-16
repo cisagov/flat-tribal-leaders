@@ -1,0 +1,15 @@
+{
+  "version": "5",
+  "remote": {
+    "https://deno.land/std@0.92.0/_util/assert.ts": "2f868145a042a11d5ad0a3c748dcf580add8a0dbc0e876eaa0026303a5488f58",
+    "https://deno.land/std@0.92.0/bytes/mod.ts": "1ae1ccfe98c4b979f12b015982c7444f81fcb921bea7aa215bf37d84f46e1e13",
+    "https://deno.land/std@0.92.0/encoding/csv.ts": "e01be5287e7aa9c6ff0caf9acf1bc19b8040ef539bfad9089cc366a94e64780d",
+    "https://deno.land/std@0.92.0/encoding/csv_stringify.ts": "f9fe4889f1b2987c8640b4695d2d8836a978d034708ca90a850d3ec6b800d9ba",
+    "https://deno.land/std@0.92.0/io/buffer.ts": "2a92f02c1d8daaebaf13e5678ea5969c89f4fab533f687b9e7e86f49f11c3118",
+    "https://deno.land/std@0.92.0/io/bufio.ts": "4053ea5d978479be68ae4d73424045a59c6b7a6e8f66727e4bfde516baa07126",
+    "https://deno.land/std@0.92.0/io/readers.ts": "17403919724fef2f343c88555606368868a5c752a1099ad801f6a381c170f62d",
+    "https://deno.land/std@0.92.0/io/util.ts": "03ca10e063afce551c501505c607ec336a40b9cb72363f5508e2a9ac81096bbf",
+    "https://deno.land/std@0.92.0/textproto/mod.ts": "1c89b39a079dd158893ab2e9ff79391c66049433d6ca82da7d64b32280570d51",
+    "https://deno.land/x/flat@0.0.15/src/csv.ts": "7b14709fd91a1e0d9153e6ea183df686ca5a6c9b79da317d15cb3efd50fffd9c"
+  }
+}
