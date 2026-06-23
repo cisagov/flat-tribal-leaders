@@ -20,7 +20,7 @@ jobs:
         run: python3 postprocess.py tribal-leaders.csv
       - name: Commit updated data
         run: |
-          git config user.name  "github-actions[bot]"
+          git config user.name  "botgov"
           git config user.email "help@get.gov"
           git add tribal-leaders.csv
           git commit -m "Flat: latest data ($(date -u +%FT%TZ))" || exit 0
