@@ -13,7 +13,7 @@ jobs:
       contents: write
     steps:
       - name: Check out repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Fetch data
         run: curl -fsSL -o tribal-leaders.csv "https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/replicafilescache/TribalLeadership_Directory_5844224010815054907.csv"
       - name: Run postprocess.py(clean + sort)
