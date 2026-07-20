@@ -15,7 +15,7 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v7
       - name: Fetch data
-        run: curl -fsSL -o tribal-leaders.csv "https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/replicafilescache/TribalLeadership_Directory_5844224010815054907.csv"
+        run: curl -fsSL -o tribal-leaders.csv "https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/replicafilescache/TribalLeadership_Directory_-8565959650657695030.csv"
       - name: Run postprocess.py(clean + sort)
         run: python3 postprocess.py tribal-leaders.csv
       - name: Commit updated data
